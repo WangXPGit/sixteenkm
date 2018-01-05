@@ -32,6 +32,23 @@ public final class StringUtil {
 	}
 
 	/**
+	 * 判断字符串数组中任何一个为非空, 即结果为 false
+	 * 
+	 * @param str
+	 * @return
+	 * @create_time 2017-11-29 21:40:09
+	 */
+	public static boolean isEmptyAnyone(String... strs) {
+		String trimStr = null;
+		for (String item : strs) {
+			trimStr = item;
+			if (item != null) trimStr = item.trim();
+			if (StringUtils.isNotEmpty(trimStr)) return false;
+		}
+		return true;
+	}
+
+	/**
 	 * 判断字符串是否非空
 	 * @param str
 	 * @return
