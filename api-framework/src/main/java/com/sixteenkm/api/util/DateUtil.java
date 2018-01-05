@@ -24,6 +24,15 @@ public final class DateUtil {
 			"MM");
 
 	/**
+	 * 格式化指定时间至文本格式 yyyy-MM-dd HH:mm:ss
+	 * @param date
+	 * @return
+	 */
+	public static String format(Date date) {
+		return dateTimeFormat.format(date);
+	}
+
+	/**
 	 * 获取当前日期与时间, yyyy-MM-dd HH:mm:ss
 	 */
 	public static String getCurrentDateTime() {
