@@ -4,6 +4,7 @@
 
 package com.sixteenkm.api.util;
 
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sixteenkm.api.json.CustomizeObjectMapper;
 
@@ -47,6 +48,27 @@ public final class JsonUtil {
 		T pojo;
 		try {
 			pojo = objectMapper.readValue(json, type);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		return pojo;
+	}
+
+	/**
+	 * 将指定 JSON 字符串转为指定类型集合对象
+	 * 
+	 * @param json
+	 * @param collectionClass
+	 * @param elementClass
+	 * @return
+	 */
+	public static <T> T fromJson(String json, Class<?> collectionClass,
+			Class<?> elementClass) {
+		T pojo;
+		try {
+			JavaType javaType = objectMapper.getTypeFactory()
+					.constructParametricType(collectionClass, elementClass);
+			pojo = objectMapper.readValue(json, javaType);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
