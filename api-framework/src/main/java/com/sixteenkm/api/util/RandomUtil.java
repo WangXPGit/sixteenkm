@@ -25,6 +25,24 @@ public final class RandomUtil {
 		return RandomStringUtils.randomNumeric(count);
 	}
 
+	/**
+	 * 生成字符序列与指定个数的随机生成文本
+	 * @param count
+	 * @return
+	 */
+	public static String random(int count, char[] characters) {
+		return RandomStringUtils.random(count, characters);
+	}
+
+	/**
+	 * 生成随机[a-z]字符串，包含大小写
+	 * @param count
+	 * @return
+	 */
+	public static String randomAlphabetic(int count) {
+		return RandomStringUtils.randomAlphabetic(count);
+	}
+
 	private RandomUtil() {
 	}
 }
