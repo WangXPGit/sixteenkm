@@ -78,7 +78,7 @@ public class HttpClientUtil {
 	}
 
 	public static void main(String[] args) {
-		String url = "http://192.168.100.12:8080/cikersapi/eqpt/order/verify/11385/14"; 
+		String url = "http://192.168.100.12:8080/cikersapi/eqpt/order/verify/11385/14";
 		System.out.println(doGet(url, null));
 	}
 
