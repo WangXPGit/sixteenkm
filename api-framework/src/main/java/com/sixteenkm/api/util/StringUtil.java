@@ -18,6 +18,32 @@ import org.apache.commons.lang3.math.NumberUtils;
 public final class StringUtil {
 
 	/**
+	 * 转换指定字符串为大写字符序列
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String upperCase(String str) {
+		if (isEmpty(str)) {
+			return null;
+		}
+		return str.toUpperCase();
+	}
+
+	/**
+	 * 转换指定字符串为小写字符序列
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String lowerCase(String str) {
+		if (isEmpty(str)) {
+			return null;
+		}
+		return str.toLowerCase();
+	}
+
+	/**
 	 * 判断字符串是否为空
 	 * 
 	 * @param str
